@@ -62,7 +62,11 @@ class Stats(object):
             data = data.values.tolist()
 
         clouds = [i[-1] for i in data]
-        return sum(clouds) / len(clouds)
+
+        if len(clouds) == 0:
+            return "No scenes selected"
+        else:
+            return sum(clouds) / len(clouds)
 
     def full_calc(self):
         """Calculate the cloud cover rate from filtered scenes."""

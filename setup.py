@@ -8,7 +8,7 @@ with codecs_open('README.rst', encoding='utf-8') as f:
 
 
 setup(name='cloudstats',
-      version='0.0.1',
+      version='0.1',
       description="""Library to calculate the cloud cover rate from Landsat 8
           scenes metadata.""",
       long_description=long_description,
