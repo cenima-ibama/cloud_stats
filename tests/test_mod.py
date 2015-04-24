@@ -10,7 +10,9 @@ def test_filter_by_date():
 
 def test_filter_by_scenes():
     test_1 = Stats('20141201', '20141216', ['156-65','156-66'], 'tests/lc8_test.csv')
+    test_2 = Stats('20141201', '20141216', ['156-225'], 'tests/lc8_test.csv')
     assert len(test_1.filter_by_scenes()) == 2
+    assert len(test_2.filter_by_scenes()) == 1
 
 
 def test_calc_rate():

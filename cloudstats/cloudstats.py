@@ -1,5 +1,5 @@
 import simplejson
-from subprocess import call
+from homura import download
 from datetime import datetime
 from pandas import read_csv
 
@@ -11,9 +11,12 @@ def get_scene_names(geojson_file):
     return [scene['properties']['name'] for scene in data['features']]
 
 
-def get_metadata():
+def get_metadata(download_dir='.'):
     """Download Landsat 8 metadata file."""
-    call(['wget', 'http://landsat.usgs.gov/metadata_service/bulk_metadata_files/LANDSAT_8.csv'])
+    download(
+        'http://landsat.usgs.gov/metadata_service/bulk_metadata_files/LANDSAT_8.csv',
+        download_dir
+        )
 
 
 class Stats(object):

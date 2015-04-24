@@ -8,7 +8,7 @@ with codecs_open('README.rst', encoding='utf-8') as f:
 
 
 setup(name='cloudstats',
-      version='0.1',
+      version='0.2',
       description="""Library to calculate the cloud cover rate from Landsat 8
           scenes metadata.""",
       long_description=long_description,
@@ -24,7 +24,8 @@ setup(name='cloudstats',
       install_requires=[
           'click',
           'pandas',
-          'simplejson'
+          'simplejson',
+          'homura'
       ],
       extras_require={
           'test': ['pytest'],
